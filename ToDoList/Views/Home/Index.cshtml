@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿@model IEnumerable<ToDoViewModel>
+=======
 ﻿@model IEnumerable<ToDo>
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
 
 <div class="row">
     <div class="col-md-2">
@@ -6,24 +10,39 @@
             <div class="mb-3">
                 <label class="form-label">Category:</label>
                 <select name="filter" class="form-select"
+<<<<<<< HEAD
+                        asp-items="@(new SelectList(Model.Categories,
+                    "CategoryId", "Name", Model.Filters.CategoryId))">
+=======
                         asp-items="@(new SelectList(ViewBag.Categories,
                     "CategoryId", "Name", ViewBag.Filters.CategoryId))">
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
                     <option value="all">All</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Due:</label>
                 <select name="filter" class="form-select"
+<<<<<<< HEAD
+                        asp-items="@(new SelectList(Model.DueFilters,
+                    "Key", "Value", Model.Filters.Due))">
+=======
                         asp-items="@(new SelectList(ViewBag.DueFilters,
                     "Key", "Value", ViewBag.Filters.Due))">
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
                     <option value="all">All</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Status:</label>
                 <select name="filter" class="form-select"
+<<<<<<< HEAD
+                        asp-items="@(new SelectList(Model.Statuses,
+                    "StatusId", "Name", Model.Filters.StatusId))">
+=======
                         asp-items="@(new SelectList(ViewBag.Statuses,
                     "StatusId", "Name", ViewBag.Filters.StatusId))">
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
                     <option value="all">All</option>
                 </select>
             </div>
@@ -34,7 +53,11 @@
     <div class="col-md-10">
 
         <form asp-action="MarkComplete" method="post" 
+<<<<<<< HEAD
+            asp-route-id="@Model.Filters.FilterString">
+=======
             asp-route-id="@ViewBag.Filters.FilterString">
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
 
             <table class="table table-bordered table-striped mt-2">
                 <thead>
@@ -47,7 +70,11 @@
                     </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
+                @foreach (ToDo task in Model.Taks)
+=======
                 @foreach (ToDo task in Model)
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
                 {
                     string overdue = task.Overdue ? "bg-warning" : "";
                     <tr>
@@ -70,7 +97,11 @@
             </table>
         </form>
         <form asp-action="DeleteComplete" method="post" 
+<<<<<<< HEAD
+            asp-route-id="@Model.Filters.FilterString">
+=======
             asp-route-id="@ViewBag.Filters.FilterString">
+>>>>>>> d451ef7aa1368b04911ea21640ee9a47e3fdfdd9
 
             <a asp-action="Add" class="btn btn-primary">Add new task</a>
             <button type="submit" class="btn btn-primary">Delete completed tasks</button>
